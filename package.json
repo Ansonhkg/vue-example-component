@@ -1,6 +1,6 @@
 {
   "name": "@ansonhkg/vue-example-component",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "main": "dist/my-component.umd.js",
   "module": "dist/my-component.esm.js",
   "unpkg": "dist/my-component.min.js",
