@@ -5,7 +5,7 @@
 <script>
 export default {
   mounted() {
-    console.log("Example component is mounted!");
+    console.info("Example component is mounted!");
   }
 };
 </script>

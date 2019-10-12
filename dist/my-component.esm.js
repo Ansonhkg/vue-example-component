@@ -2,10 +2,23 @@
 //
 //
 //
+//
+//
+//
 
 var script = {
   mounted: function mounted() {
-    console.log("Example component is mounted!");
+    // console.log("Example component is mounted!");
+  },
+  directives: {
+    saveImage: {
+      // directive definition
+      inserted: function(el, binding) {
+        el.addEventListener("click", function (event) {
+          console.log(binding.value);
+        });
+      }
+    }
   }
 };
 
@@ -158,7 +171,30 @@ var __vue_render__ = function() {
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
   return _c("div", { staticClass: "container" }, [
-    _vm._v("This is an example component.")
+    _c(
+      "div",
+      {
+        directives: [{ name: "focus", rawName: "v-focus" }],
+        attrs: { id: "testing" }
+      },
+      [_vm._v("123")]
+    ),
+    _vm._v(" "),
+    _c(
+      "h1",
+      {
+        directives: [
+          {
+            name: "saveImage",
+            rawName: "v-saveImage",
+            value: { target: "testing", saveAs: "filename" },
+            expression: "{target:'testing', saveAs: 'filename'}"
+          }
+        ]
+      },
+      [_vm._v("Test")]
+    ),
+    _vm._v("This is an example component.\n")
   ])
 };
 var __vue_staticRenderFns__ = [];
@@ -167,7 +203,7 @@ __vue_render__._withStripped = true;
   /* style */
   var __vue_inject_styles__ = function (inject) {
     if (!inject) { return }
-    inject("data-v-ad519a40_0", { source: "\n.container {\r\n  background-color: red;\r\n  padding: 10px;\r\n  width: 100px;\r\n  height: 100px;\r\n  position: absolute;\n}\r\n", map: {"version":3,"sources":["D:\\_Developments\\2019\\MyComponent\\src\\my-component.vue"],"names":[],"mappings":";AAaA;EACA,qBAAA;EACA,aAAA;EACA,YAAA;EACA,aAAA;EACA,kBAAA;AACA","file":"my-component.vue","sourcesContent":["<template>\r\n  <div class=\"container\">This is an example component.</div>\r\n</template>\r\n\r\n<script>\r\nexport default {\r\n  mounted() {\r\n    console.log(\"Example component is mounted!\");\r\n  }\r\n};\r\n</script>\r\n\r\n<style>\r\n.container {\r\n  background-color: red;\r\n  padding: 10px;\r\n  width: 100px;\r\n  height: 100px;\r\n  position: absolute;\r\n}\r\n</style>"]}, media: undefined });
+    inject("data-v-64a23e92_0", { source: "\n.container {\r\n  background-color: red;\r\n  padding: 10px;\r\n  width: 100px;\r\n  height: 100px;\r\n  position: absolute;\n}\r\n", map: {"version":3,"sources":["D:\\_Developments\\2019\\vue-example-component\\src\\my-component.vue"],"names":[],"mappings":";AA0BA;EACA,qBAAA;EACA,aAAA;EACA,YAAA;EACA,aAAA;EACA,kBAAA;AACA","file":"my-component.vue","sourcesContent":["<template>\r\n  <div class=\"container\">\r\n    <div id=\"testing\" v-focus>123</div>\r\n    <h1 v-saveImage=\"{target:'testing', saveAs: 'filename'}\">Test</h1>This is an example component.\r\n  </div>\r\n</template>\r\n\r\n<script>\r\nexport default {\r\n  mounted() {\r\n    // console.log(\"Example component is mounted!\");\r\n  },\r\n  directives: {\r\n    saveImage: {\r\n      // directive definition\r\n      inserted: function(el, binding) {\r\n        el.addEventListener(\"click\", event => {\r\n          console.log(binding.value);\r\n        });\r\n      }\r\n    }\r\n  }\r\n};\r\n</script>\r\n\r\n<style>\r\n.container {\r\n  background-color: red;\r\n  padding: 10px;\r\n  width: 100px;\r\n  height: 100px;\r\n  position: absolute;\r\n}\r\n</style>"]}, media: undefined });
 
   };
   /* scoped */
@@ -198,6 +234,13 @@ function install(Vue) {
   if (install.installed) { return; }
   install.installed = true;
   Vue.component("MyComponent", component); // <== CHANGE THIS
+  Vue.directive("focus", {
+    // When the bound element is inserted into the DOM...
+    inserted: function(el) {
+      // Focus the element
+      console.warn(el);
+    }
+  });
 }
 
 // Create module definition for Vue.use()
