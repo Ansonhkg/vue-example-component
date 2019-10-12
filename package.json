@@ -1,6 +1,6 @@
 {
   "name": "@ansonhkg/vue-example-component",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "main": "dist/my-component.umd.js",
   "module": "dist/my-component.esm.js",
   "unpkg": "dist/my-component.min.js",
@@ -21,5 +21,21 @@
     "rollup-plugin-vue": "^5.0.1",
     "vue": "^2.6.10",
     "vue-template-compiler": "^2.6.10"
-  }
+  },
+  "description": "A minimal guide to publish vue component to npm.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ansonhkg/vue-example-component.git"
+  },
+  "keywords": [
+    "vue",
+    "component",
+    "javascript"
+  ],
+  "author": "Anson Cheung",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ansonhkg/vue-example-component/issues"
+  },
+  "homepage": "https://github.com/Ansonhkg/vue-example-component#readme"
 }
