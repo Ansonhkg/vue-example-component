@@ -2,13 +2,10 @@
 //
 //
 //
-//
-//
 
 var script = {
-  name: "example-component",
   mounted: function mounted() {
-    console.warn("Example Component is mounted.");
+    console.log("Example component is mounted!");
   }
 };
 
@@ -160,24 +157,17 @@ var __vue_render__ = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
-  return _vm._m(0)
+  return _c("div", { staticClass: "container" }, [
+    _vm._v("This is an example component.")
+  ])
 };
-var __vue_staticRenderFns__ = [
-  function() {
-    var _vm = this;
-    var _h = _vm.$createElement;
-    var _c = _vm._self._c || _h;
-    return _c("div", { staticClass: "example-component--container" }, [
-      _c("span", [_vm._v("This is an example component.")])
-    ])
-  }
-];
+var __vue_staticRenderFns__ = [];
 __vue_render__._withStripped = true;
 
   /* style */
   var __vue_inject_styles__ = function (inject) {
     if (!inject) { return }
-    inject("data-v-7a0578f2_0", { source: "\n.example-component--container {\r\n  background-color: red;\r\n  width: 200px;\r\n  height: 200px;\r\n  display: flex;\r\n  justify-content: center;\r\n  padding: 10px;\r\n  border: 10px solid black;\r\n  box-sizing: border-box;\r\n  text-align: center;\r\n  position: fixed;\n}\n.example-component--container > span {\r\n  margin: auto;\n}\r\n", map: {"version":3,"sources":["D:\\_Developments\\2019\\ExampleComponent\\src\\ExampleComponent.vue"],"names":[],"mappings":";AAgBA;EACA,qBAAA;EACA,YAAA;EACA,aAAA;EACA,aAAA;EACA,uBAAA;EACA,aAAA;EACA,wBAAA;EACA,sBAAA;EACA,kBAAA;EACA,eAAA;AACA;AACA;EACA,YAAA;AACA","file":"ExampleComponent.vue","sourcesContent":["<template>\r\n  <div class=\"example-component--container\">\r\n    <span>This is an example component.</span>\r\n  </div>\r\n</template>\r\n\r\n<script>\r\nexport default {\r\n  name: \"example-component\",\r\n  mounted() {\r\n    console.warn(\"Example Component is mounted.\");\r\n  }\r\n};\r\n</script>\r\n\r\n<style>\r\n.example-component--container {\r\n  background-color: red;\r\n  width: 200px;\r\n  height: 200px;\r\n  display: flex;\r\n  justify-content: center;\r\n  padding: 10px;\r\n  border: 10px solid black;\r\n  box-sizing: border-box;\r\n  text-align: center;\r\n  position: fixed;\r\n}\r\n.example-component--container > span {\r\n  margin: auto;\r\n}\r\n</style>"]}, media: undefined });
+    inject("data-v-ad519a40_0", { source: "\n.container {\r\n  background-color: red;\r\n  padding: 10px;\r\n  width: 100px;\r\n  height: 100px;\r\n  position: absolute;\n}\r\n", map: {"version":3,"sources":["D:\\_Developments\\2019\\MyComponent\\src\\my-component.vue"],"names":[],"mappings":";AAaA;EACA,qBAAA;EACA,aAAA;EACA,YAAA;EACA,aAAA;EACA,kBAAA;AACA","file":"my-component.vue","sourcesContent":["<template>\r\n  <div class=\"container\">This is an example component.</div>\r\n</template>\r\n\r\n<script>\r\nexport default {\r\n  mounted() {\r\n    console.log(\"Example component is mounted!\");\r\n  }\r\n};\r\n</script>\r\n\r\n<style>\r\n.container {\r\n  background-color: red;\r\n  padding: 10px;\r\n  width: 100px;\r\n  height: 100px;\r\n  position: absolute;\r\n}\r\n</style>"]}, media: undefined });
 
   };
   /* scoped */
@@ -190,7 +180,7 @@ __vue_render__._withStripped = true;
   
 
   
-  var ExampleComponent = normalizeComponent_1(
+  var component = normalizeComponent_1(
     { render: __vue_render__, staticRenderFns: __vue_staticRenderFns__ },
     __vue_inject_styles__,
     __vue_script__,
@@ -207,7 +197,7 @@ __vue_render__._withStripped = true;
 function install(Vue) {
   if (install.installed) { return; }
   install.installed = true;
-  Vue.component("ExampleComponent", ExampleComponent);
+  Vue.component("MyComponent", component); // <== CHANGE THIS
 }
 
 // Create module definition for Vue.use()
@@ -226,5 +216,5 @@ if (GlobalVue) {
   GlobalVue.use(plugin);
 }
 
-export default ExampleComponent;
+export default component;
 export { install };
