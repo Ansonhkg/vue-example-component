@@ -1,5 +1,10 @@
+# What is it?
+
+A minimal guide to publish vue component to npm.
+
 # Publish Vue component as NPM Package in 5 minutes.
 
+- [What is it?](#what-is-it)
 - [Publish Vue component as NPM Package in 5 minutes.](#publish-vue-component-as-npm-package-in-5-minutes)
 - [Expected Usage](#expected-usage)
 - [Steps](#steps)
